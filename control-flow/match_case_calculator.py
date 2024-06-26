@@ -1,6 +1,7 @@
 num1 = float(input("Enter the first number: "))
 num2 = float(input("Enter the second number: "))
-operation = input("\s*['\"]Choose the operation \(\+\s*,\s*-\s*,\s*\*\s*,\s*/\):\s*['\"]\s*\): ")
+
+operation = operation = input("Choose the operation (+, -, *, /): ").strip()
 
 match operation:
         case '+':
