@@ -1,7 +1,8 @@
-# Prompt User for a Number
+# Prompt the user for a number
 number = int(input("Enter a number to see its multiplication table: "))
 
-# Generate and Print the Multiplication Table
-for i in range(1,11):
-    print("{0} * {1} = {2}".format(number,i, (number * i)))
+# Generate and print the multiplication table
+for i in range(1, 10 + 1):
+    product = number * i
+    print(f"{number} * {i} = {product}")
 print()
