@@ -6,3 +6,6 @@ for i in range(1, 11):
     product = number * i
     # Generate and print the multiplication table
     print(f"{number} * {i} = {product}")
+    
+# Call the recursive function to print the multiplication table
+print(number)
