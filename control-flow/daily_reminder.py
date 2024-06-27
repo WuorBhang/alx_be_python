@@ -16,7 +16,8 @@ match priority:
 
 if time_bound == "yes":
         reminder += " that requires immediate attention today!"
-
+elif priority.lower() == "low":
+    reminder += " Consider completing it when you have free time."
  # Provide a Customized Reminder
 print(f"Reminder: {reminder}")
 
