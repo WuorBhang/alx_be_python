@@ -8,5 +8,5 @@ def perform_operation(num1, num2, operation):
     elif operation == 'divide':
         try:
             return num1 / num2
-        except ZeroDivisionError:
+        except 0:
             return "Error: Division by zero is not allowed"
