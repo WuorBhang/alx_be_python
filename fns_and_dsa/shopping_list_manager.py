@@ -36,7 +36,7 @@ def main():
                 print("Shopping list is empty.")
         
         elif choice == '4':
-            print("Exiting the Shopping List Manager.")
+            print("Exiting the Shopping List Manager.", "Goodbye!")
             break
         
         else:
