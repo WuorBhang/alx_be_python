@@ -1,3 +1,5 @@
+# shopping_list_manager.py
+
 def display_menu():
     print("Shopping List Manager")
     print("1. Add item")
@@ -13,7 +15,7 @@ def main():
         choice = input("Enter your choice (1-4): ").strip()
 
         if choice == '1':
-            item = input("Enter item to add: ").strip()
+            item = input("Enter the item to add: ").strip()
             shopping_list.append(item)
             print(f"'{item}' added to the shopping list.")
         
@@ -39,6 +41,3 @@ def main():
         
         else:
             print("Invalid choice. Please enter a number from 1 to 4.")
-
-if __name__ == "__main__":
-    main()
