@@ -12,32 +12,26 @@ def convert_to_fahrenheit(celsius):
     fahrenheit = (celsius * CELSIUS_TO_FAHRENHEIT_FACTOR) + 32
     return fahrenheit
 
-# Example usage:
-fahrenheit_temp = 80
-celsius_temp = convert_to_celsius(fahrenheit_temp)
-print(f"{fahrenheit_temp}°F is {celsius_temp:.2f}°C")
-
-celsius_temp = 25
-fahrenheit_temp = convert_to_fahrenheit(celsius_temp)
-print(f"{celsius_temp}°C is {fahrenheit_temp:.2f}°F")
-
-
 # User Interaction
-try:
-    temperature = float(input("Enter the temperature: "))
-    unit = input("Enter the unit Celsius or Fahrenheit? (C/F): ").strip().upper()
+def main():
+    while True:
+        try:
+            temperature = float(input("Enter the temperature to convert: "))
+            unit = input("Is this temperature in Celsius or Fahrenheit? (C/F): ").strip().upper()
 
-    if unit == 'C':
-        converted_temperature = convert_to_fahrenheit(temperature)
-        print(f"The temperature in Fahrenheit is: {converted_temperature}°F")
+            if unit == 'C':
+                converted_temperature = convert_to_fahrenheit(temperature)
+                print(f"The temperature in Fahrenheit is: {converted_temperature}°F")
 
-    elif unit == 'F':
-        converted_temperature = convert_to_celsius(temperature)
-        print(f"The temperature in Celsius is: {converted_temperature}°C")
+            elif unit == 'F':
+                converted_temperature = convert_to_celsius(temperature)
+                print(f"The temperature in Celsius is: {converted_temperature}°C")
 
-    else:
-        raise ValueError("Invalid unit. Please enter 'C' or 'F'.")
-    
-except ValueError:
-    print("Invalid temperature. Please enter a numeric value.")
+            else:
+                raise ValueError("Invalid unit. Please enter 'C' or 'F'.")
+        
+        except ValueError as e:
+            print(f"Error: {e}")
+        except Exception as e:
+            print(f"Unexpected error: {e}")
 
