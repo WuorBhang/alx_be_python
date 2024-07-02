@@ -1,40 +1,30 @@
-# temp_conversion_tool.py
-
-# Global conversion factors
+# Global Conversion Factors
 FAHRENHEIT_TO_CELSIUS_FACTOR = 5 / 9
 CELSIUS_TO_FAHRENHEIT_FACTOR = 9 / 5
 
+# Conversion Functions
 def convert_to_celsius(fahrenheit):
-    """Converts temperature from Fahrenheit to Celsius."""
-    celsius = (fahrenheit - 32) * FAHRENHEIT_TO_CELSIUS_FACTOR
-    return celsius
+    return (fahrenheit - 32) * FAHRENHEIT_TO_CELSIUS_FACTOR
 
 def convert_to_fahrenheit(celsius):
-    """Converts temperature from Celsius to Fahrenheit."""
-    fahrenheit = celsius * CELSIUS_TO_FAHRENHEIT_FACTOR + 32
-    return fahrenheit
+    return (celsius * CELSIUS_TO_FAHRENHEIT_FACTOR) + 32
 
-def main():
-    while True:
-        try:
-            temperature = float(input("Enter the temperature to convert: "))
-            unit = input("Is this temperature in Celsius or Fahrenheit? (C/F): ").strip().upper()
+# User Interaction
+try:
+    temperature = float(input("Enter the temperature: "))
+    unit = input("Enter the unit (Celsius or Fahrenheit): ")
 
-            if unit == 'F':
-                converted_temperature = convert_to_celsius(temperature)
-                print(f"{temperature:.1f}°F is {converted_temperature:.14f}°C")
-            elif unit == 'C':
-                converted_temperature = convert_to_fahrenheit(temperature)
-                print(f"{temperature:.1f}°C is {converted_temperature:.1f}°F")
-            else:
-                raise ValueError("Invalid temperature. Please enter a numeric value.")
+    if unit.lower() == 'celsius':
+        converted_temperature = convert_to_fahrenheit(temperature)
+        print(f"The temperature in Fahrenheit is: {converted_temperature}°F")
 
-        except ValueError as e:
-            print(f"Error: {e}")
+    elif unit.lower() == 'fahrenheit':
+        converted_temperature = convert_to_celsius(temperature)
+        print(f"The temperature in Celsius is: {converted_temperature}°C")
 
-        continue_choice = input("Do you want to perform another conversion? (yes/no): ").strip().lower()
-        if continue_choice != 'yes':
-            break
+    else:
+        raise ValueError("Invalid unit. Please enter 'Celsius' or 'Fahrenheit'.")
+    
+except ValueError:
+    print("Invalid temperature. Please enter a numeric value.")
 
-if __name__ == "__main__":
-    main()
