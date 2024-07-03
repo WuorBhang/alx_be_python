@@ -3,15 +3,14 @@ def convert_to_celsius(fahrenheit):
     celsius = (fahrenheit - 32) * FAHRENHEIT_TO_CELSIUS_FACTOR
     return celsius
 
-def convert_to_fahrenheit(celsius):
-    """Converts temperature from Celsius to Fahrenheit."""
-    fahrenheit = (celsius * CELSIUS_TO_FAHRENHEIT_FACTOR) + 32
-    return fahrenheit
-
 # Global conversion factors
 FAHRENHEIT_TO_CELSIUS_FACTOR = 5 / 9
 CELSIUS_TO_FAHRENHEIT_FACTOR = 9 / 5  # Ensure this line is present
 
+def convert_to_fahrenheit(celsius):
+    """Converts temperature from Celsius to Fahrenheit."""
+    fahrenheit = (celsius * CELSIUS_TO_FAHRENHEIT_FACTOR) + 32
+    return fahrenheit
 
 def get_temperature_and_unit():
     """Gets temperature and unit from user input."""
