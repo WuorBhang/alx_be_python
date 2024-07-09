@@ -20,7 +20,7 @@ def test_bank_account():
     account = BankAccount(250)  # Start with an initial balance of $250.00
 
     # Check that "Current Balance:" is in display_balance method
-    assert "Current Balance:" in account.display_balance(), "The string 'Current Balance:' should be in the display_balance method"
+    assert "Current Balance: $" in account.display_balance(), "The string 'Current Balance: $' should be in the display_balance method"
 
     # Check deposit
     assert account.deposit(100) == "Deposited: $100.00", "Deposit method failed"
