@@ -4,38 +4,38 @@ class BankAccount:
 
     def deposit(self, amount):
         self.balance += amount
-        return self.display_balance()
+        return f"Deposited: ${amount:.2f}"
 
     def withdraw(self, amount):
         if amount > self.balance:
-            return "Insufficient funds"
+            return "Insufficient funds."
         self.balance -= amount
-        return self.display_balance()
+        return f"Withdrew: ${amount:.2f}"
 
     def display_balance(self):
-        return f"Balance: {self.balance}"
+        return f"Current Balance: ${self.balance:.2f}"
 
 # Checks for Implementation
 def test_bank_account():
-    # Check that "Current Balance:" is not in display_balance method
-    account = BankAccount()
-    assert "Current Balance:" not in account.display_balance(), "The string 'Current Balance:' should not be in the display_balance method"
+    account = BankAccount(250)  # Start with an initial balance of $250.00
+
+    # Check that "Current Balance:" is in display_balance method
+    assert "Current Balance:" in account.display_balance(), "The string 'Current Balance:' should be in the display_balance method"
 
     # Check deposit
-    assert account.deposit(100) == "Balance: 100", "Deposit method failed"
+    assert account.deposit(100) == "Deposited: $100.00", "Deposit method failed"
 
     # Check withdrawal
-    assert account.withdraw(50) == "Balance: 50", "Withdrawal method failed"
+    assert account.withdraw(50) == "Withdrew: $50.00", "Withdrawal method failed"
 
     # Check withdrawal more than balance
-    assert account.withdraw(60) == "Insufficient funds", "Insufficient funds check failed"
+    assert account.withdraw(670) == "Insufficient funds.", "Insufficient funds check failed"
 
     # Check display balance
-    assert account.display_balance() == "Balance: 50", "Display balance method failed"
+    assert account.display_balance() == "Current Balance: $300.00", "Display balance method failed"
 
 # Run tests
 test_bank_account()
-
 
 # This part below is to test the class functionality (Optional)
 # if __name__ == "__main__":
